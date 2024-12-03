@@ -46,7 +46,7 @@ export const NavigationItems: NavigationItem[] = [
         breadcrumbs: false
       }
     ]
-  },  
+  },
 
   {
     id: 'other',
@@ -69,20 +69,31 @@ export const NavigationItems: NavigationItem[] = [
         url: '/sample-page2',
         classes: 'nav-item',
         icon: 'chrome'
-      },{
+      },
+      {
         id: 'sample-page3',
         title: 'Sample Page 3',
         type: 'item',
         url: '/sample-page3',
         classes: 'nav-item',
         icon: 'chrome'
-      },{
+      },
+      {
         id: 'sample-page4',
-        title: 'Sample Page 4',
+        title: 'User',
         type: 'item',
         url: '/sample-page4',
         classes: 'nav-item',
         icon: 'chrome'
-      }]
+      },
+      {
+        id: 'sample-page5',
+        title: 'Admin',
+        type: 'item',
+        url: '/sample-page5',
+        classes: 'nav-item',
+        icon: 'chrome'
+      }
+    ]
   }
 ];

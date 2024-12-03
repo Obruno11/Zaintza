@@ -1,18 +1,20 @@
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Observable } from 'rxjs';
-import { NgFor, NgIf } from '@angular/common';
 
 //Material
 import { MatExpansionModule } from '@angular/material/expansion';
+
+//Component
+import { SignaturePadComponent } from "../signature-pad/signature-pad.component";
 
 //Servicios
 
 @Component({
   selector: 'app-profesores-lista',
   standalone: true,
-  imports: [MatExpansionModule, NgFor, NgIf],
+  imports: [MatExpansionModule, SignaturePadComponent],
   templateUrl: './profesores-lista.component.html',
-  styleUrl: './profesores-lista.component.scss'
+  styleUrl: '../sample-page4.component.css'
 })
 export class ProfesoresListaComponent implements OnInit {
   @Input() ordua: string;

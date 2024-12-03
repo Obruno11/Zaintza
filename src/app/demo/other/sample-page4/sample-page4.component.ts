@@ -19,7 +19,7 @@ import { ApiService } from '../api.service';
   standalone: true,
   imports: [SharedModule, MatTabsModule, ProfesoresListaComponent],
   templateUrl: './sample-page4.component.html',
-  styleUrls: ['./sample-page4.component.scss']
+  styleUrls: ['./sample-page4.component.css']
 })
 export default class SamplePageComponent implements OnInit{
   profesores: any;

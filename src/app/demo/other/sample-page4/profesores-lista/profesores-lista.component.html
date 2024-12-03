@@ -1,20 +1,31 @@
-<mat-accordion>
-  <div *ngFor="let item of listaProfesores">
-    <div *ngIf="item.ordua == this.ordua">
-      <mat-expansion-panel>
-        <mat-expansion-panel-header>
-          <mat-panel-title>
-            {{item.irakaslea}}
-          </mat-panel-title>
-          <mat-panel-description>
-            Sinatua
-          </mat-panel-description>
-        </mat-expansion-panel-header>
-        <p>ORDEZKATUA: {{item.ordezkatua}}</p>
-        <p>TALDEA: {{item.taldea}}</p>
-        <p>GELA: {{item.gela}}</p>
-        <p>OHARRAK: {{item.oharrak}}</p>
-      </mat-expansion-panel>
-    </div>
-  </div>
-</mat-accordion>
+<div class="p-4">
+  <mat-accordion>
+    @for (item of listaProfesores; track item.id) {
+      @if (item.ordua == ordua) {
+        <mat-expansion-panel>
+          <mat-expansion-panel-header class="back-secondary">
+            <mat-panel-title>
+              {{ item.irakaslea }}
+            </mat-panel-title>
+            <mat-panel-description>
+              {{ item.sinadura ? 'Sinatuta' : 'Sinatu gabe' }}
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="">
+            <div class="row">
+              <div class="col-6">
+                <p>ORDEZKATUA: {{ item.ordezkatua }}</p>
+                <p>TALDEA: {{ item.taldea }}</p>
+                <p>GELA: {{ item.gela }}</p>
+                <p>OHARRAK: {{ item.oharrak }}</p>
+              </div>
+              <div class="col-6">
+                <app-signature-pad [id]="item.id" [sinadura]="item.sinadura" [sinaduraImg]="item.sinaduraImg" />
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+      }
+    }
+  </mat-accordion>
+</div>

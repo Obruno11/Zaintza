@@ -31,9 +31,11 @@ const routes: Routes = [
       {
         path: 'sample-page4',
         loadComponent: () => import('./demo/other/sample-page4/sample-page4.component')
+      },
+      {
+        path: 'sample-page5',
+        loadComponent: () => import('./demo/other/sample-page5/sample-page5.component')
       }
-
-      
     ]
   },
   {
