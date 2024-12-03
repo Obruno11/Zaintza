@@ -1,0 +1,27 @@
+<div class="accordion" id="accordion">
+  <div *ngFor="let item of profesores, let i = index">
+    <div *ngIf="item.ordua == ordua">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#' + i" aria-expanded="true" [attr.aria-controls]="i">
+            <h4>{{item.irakaslea}}</h4>
+          </button>
+        </h2>
+        <div [attr.id]="i" class="accordion-collapse collapse" data-bs-parent="#accordion">
+          <div class="accordion-body">
+            <app-prf-accordion-body
+              [id]="item.id"
+              [ordezkatua]="item.ordezkatua"
+              [taldea]="item.taldea"
+              [gela]="item.gela"
+              [oharra]="item.oharra"
+              [sinadura]="item.sinadura"
+              [sinaduraImg]="item.sinaduraImg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

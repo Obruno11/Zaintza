@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-6 col-xxl-7 col-xxl-8">
+      <p>
+        <b class="txt-custom">ORDEZKATUA:</b>
+        {{ ordezkatua }}
+      </p>
+      <p>
+        <b class="txt-custom">TALDEA:</b>
+        {{ taldea }}
+      </p>
+      <p>
+        <b class="txt-custom">GELA:</b>
+        {{ gela }}
+      </p>
+      <p>
+        <b class="txt-custom">OHARRA:</b>
+        {{ oharra }}
+      </p>
+    </div>
+
+    <div class="d-block d-sm-none">
+      <button [attr.popovertarget]="'signaturePad' + id">Sinatu</button>
+      <div class="popoverContainer" [attr.id]="'signaturePad' + id" popover>
+        <div class="popoverContent">
+          <button class="position-absolute top-0 end-0 p-3 btn" [attr.popovertarget]="'signaturePad' + id">
+            <h1 class="text-white">x</h1>
+          </button>
+          <app-signature-pad class="position-absolute top-50 start-50 translate-middle"></app-signature-pad>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-none d-sm-block col-sm-12 col-lg-6 col-xl-5 col-xxl-4">
+      <app-signature-pad [sinadura]="sinadura" [sinaduraImg]="sinaduraImg" [id]="id"></app-signature-pad>
+    </div>
+  </div>
+</div>

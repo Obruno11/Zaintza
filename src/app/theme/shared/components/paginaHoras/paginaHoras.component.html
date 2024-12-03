@@ -1,0 +1,10 @@
+<ng-container *ngFor="let profesor of profesores">
+  <app-collapse
+    *ngIf="profesor.ordua == ordua"
+    collapseZaintza="{{ profesor.irakaslea }}"
+    collapseOrdezkatua="{{ profesor.ordezkatua }}"
+    collapseTaldea="{{ profesor.taldea }}"
+    collapseGela="{{ profesor.gela }}"
+    collapseOharrak="{{ profesor.oharrak }}"
+  ></app-collapse>
+</ng-container>

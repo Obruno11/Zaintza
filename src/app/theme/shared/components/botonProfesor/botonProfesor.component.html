@@ -1,0 +1,23 @@
+<div class="d-grid gap-1 m-2">
+  <button
+    type="button"
+    class="btn btn-success text-start"
+    (click)="collapse.toggle()"
+    [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample"
+  >
+    {{ collapseZaintza }}
+  </button>
+
+  <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+    <div class="card">
+      <div class="card-body">
+        <p>ORDEZKATUA: {{ collapseOrdezkatua }}</p>
+        <p>TALDEA: {{ collapseTaldea }}</p>
+        <p>GELA: {{ collapseGela }}</p>
+        <p>OHARRAK: {{ collapseOharrak }}</p>
+        <p class="d-grid "><button class="btn btn-outline-success ">Firma</button></p>
+      </div>
+    </div>
+  </div>
+</div>

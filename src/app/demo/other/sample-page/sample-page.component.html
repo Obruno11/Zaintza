@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <nav class="navbar navbar-expand-ig bg-body-tertiary">
+    <ul class="nav justify-content-center">
+      <li class="nav-item">
+        <button (click)="aldatuordua(1)" class="nav-link horas active" id="1">8:00 - 9:00</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="aldatuordua(2)" class="nav-link horas" id="2">9:00 - 10:00</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="aldatuordua(3)" class="nav-link horas" id="3">10:00 - 11:00</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="aldatuordua(4)" class="nav-link horas" id="4">11:30 - 12:30</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="aldatuordua(5)" class="nav-link horas" id="5">12:30 - 13:30</button>
+      </li>
+      <li class="nav-item">
+        <button (click)="aldatuordua(6)" class="nav-link horas" id="6">13:30 - 14:30</button>
+      </li>
+    </ul>
+  </nav>
+  <app-horas ordua="{{orduaToSend}}"></app-horas>
+</div>

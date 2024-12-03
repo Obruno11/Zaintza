@@ -1,0 +1,22 @@
+
+<div class="container">
+  <div class="row">
+    <h1 class="txt-custom">{{fechaHoy}}</h1>
+    <div class="btn-group d-none d-md-block">
+      <button type="button" class="btn btn-custom btn-custom-active" (click)="changeOrdua('1')" id="bot1">8:00-9:00</button>
+      <button type="button" class="btn btn-custom" (click)="changeOrdua('2')" id="bot2">9:00-10:00</button>
+      <button type="button" class="btn btn-custom" (click)="changeOrdua('3')" id="bot3">10:00-11:00</button>
+      <button type="button" class="btn btn-custom" (click)="changeOrdua('4')" id="bot4">11:00-12:00</button>
+      <button type="button" class="btn btn-custom" (click)="changeOrdua('5')" id="bot5">12:00-13:00</button>
+      <button type="button" class="btn btn-custom" (click)="changeOrdua('6')" id="bot6">13:00-14:00</button>
+    </div>   
+  </div>
+  
+  <div class="row">
+    <div class="my-3">
+      <app-prf-accordion [ordua]="ordua"/>
+    </div>
+  </div>
+</div>
+
+

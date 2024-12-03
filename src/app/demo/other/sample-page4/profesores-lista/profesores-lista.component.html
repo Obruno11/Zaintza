@@ -1,0 +1,20 @@
+<mat-accordion>
+  <div *ngFor="let item of listaProfesores">
+    <div *ngIf="item.ordua == this.ordua">
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{item.irakaslea}}
+          </mat-panel-title>
+          <mat-panel-description>
+            Sinatua
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <p>ORDEZKATUA: {{item.ordezkatua}}</p>
+        <p>TALDEA: {{item.taldea}}</p>
+        <p>GELA: {{item.gela}}</p>
+        <p>OHARRAK: {{item.oharrak}}</p>
+      </mat-expansion-panel>
+    </div>
+  </div>
+</mat-accordion>

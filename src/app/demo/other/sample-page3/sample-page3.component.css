@@ -1,0 +1,51 @@
+.bg-custom{
+  background-color: #282d80;
+}
+
+.bg-custom2{
+  background-color: #ddd;
+}
+
+.txt-custom{
+  color: #282d80;
+}
+
+.border-custom{
+  border-radius: 5px;
+  border: solid 1px;
+  border-color: #282d80;
+}
+
+.btn-custom:hover{
+  color: #fff;
+  background-color: #1b1d52;
+  border-color: #1b1d52;
+}
+
+.btn-custom{
+  border-color: #282d80;
+  color: #282d80;
+  background-color: #fff ;
+}
+
+.btn-custom-active, .btn-custom-solid{
+  color: #fff;
+  background-color: #282d80;
+  border-color: #282d80;
+}
+
+.canvas{
+  width: 700;
+  height: 500;
+  background-color: #eee;
+}
+
+.popoverContainer{
+  width: 100vw;
+  height: 100vh; 
+  background-color: rgba(0,0,0,0.4);
+  border: 0;
+  position:absolute;
+  top:0;
+  left: 0;
+}
