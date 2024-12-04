@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SamplePage5Component } from './sample-page5.component';
+import { HeaderComponent } from './header.component';
 
-describe('SamplePage5Component', () => {
-  let component: SamplePage5Component;
-  let fixture: ComponentFixture<SamplePage5Component>;
+describe('HeaderComponent', () => {
+  let component: HeaderComponent;
+  let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SamplePage5Component]
+      imports: [HeaderComponent]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SamplePage5Component);
+    fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

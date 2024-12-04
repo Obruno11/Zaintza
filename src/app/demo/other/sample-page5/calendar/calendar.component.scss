@@ -1,0 +1,31 @@
+::ng-deep .mat-calendar-body {
+  font-family: Arial, sans-serif; 
+}
+
+::ng-deep .mat-calendar-body-cell.current-week {
+  border-bottom: 2px solid #ffc107;
+  color: #fff ; 
+}
+
+::ng-deep .mat-calendar-body-cell.hihglighted-date {
+  border: 2px solid #198754 ;
+  color: #fff ; 
+}
+
+::ng-deep .mat-calendar-body-selected{
+  background-color: #ccc !important;
+  color: black !important;
+}
+
+::ng-deep .mat-calendar-body-cell {
+  cursor: pointer; 
+}
+
+::ng-deep .mat-calendar-body-cell-content{
+  border-radius: 0% !important;
+}
+
+::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
+  border: 0;
+  color: #282d80 !important;
+}
