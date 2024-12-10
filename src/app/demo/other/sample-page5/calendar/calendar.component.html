@@ -1,2 +1,4 @@
-<mat-calendar style="width: 300px; background-color: #eee; border: 2px solid #222;" [dateClass]="highlightDates" [(selected)]="fechaSeleccionada"></mat-calendar>
-<p>{{ fechaSeleccionada }}</p>
+<mat-card>
+  <mat-calendar [(selected)]="selectedDate" [dateClass]="dateClass" class="calendar"></mat-calendar>
+</mat-card>
+<p>{{selectedDate()}}</p>

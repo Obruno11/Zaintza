@@ -1,31 +1,39 @@
-::ng-deep .mat-calendar-body {
-  font-family: Arial, sans-serif; 
+$diaCargado: #28a745;
+$diaNoCargado: #ffc107;
+$error: #dc3545;
+
+@use '@angular/material' as mat;
+
+// Customize the entire app. Change :root to your selector if you want to scope the styles.
+.calendar {
+  @include mat.datepicker-overrides((
+    calendar-date-selected-state-text-color: black,
+    calendar-date-selected-state-background-color: #ccc,
+  ));
 }
 
-::ng-deep .mat-calendar-body-cell.current-week {
-  border-bottom: 2px solid #ffc107;
-  color: #fff ; 
+::ng-deep .mat-calendar-body-cell.diaCargado::before {
+  content:"";
+  display: absolute;
+  background-color: $diaCargado;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 25px;
+  z-index: 10;
 }
 
-::ng-deep .mat-calendar-body-cell.hihglighted-date {
-  border: 2px solid #198754 ;
-  color: #fff ; 
-}
-
-::ng-deep .mat-calendar-body-selected{
-  background-color: #ccc !important;
-  color: black !important;
-}
-
-::ng-deep .mat-calendar-body-cell {
-  cursor: pointer; 
-}
-
-::ng-deep .mat-calendar-body-cell-content{
-  border-radius: 0% !important;
-}
-
-::ng-deep .mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical){
-  border: 0;
-  color: #282d80 !important;
+::ng-deep .mat-calendar-body-cell.diaNoCargado::before {
+  content:"";
+  display: absolute;
+  background-color: $diaNoCargado;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  top: 0;
+  left: 25px;
+  z-index: 10;
 }

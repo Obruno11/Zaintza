@@ -1,58 +1,39 @@
-import { Component, LOCALE_ID } from '@angular/core';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { CommonModule } from '@angular/common';
+import { Component, ChangeDetectionStrategy, model, Output, EventEmitter, signal, input } from "@angular/core";
+import { provideNativeDateAdapter } from "@angular/material/core";
+import { MatCalendarCellClassFunction, MatDatepickerModule } from "@angular/material/datepicker";
+import { MatCardModule } from "@angular/material/card"
 
+
+/** @title Basic datepicker */
 @Component({
   selector: 'app-calendar',
   standalone: true,
-  imports: [CommonModule, MatDatepickerModule, MatNativeDateModule],
-  templateUrl: './calendar.component.html',
-  styleUrls: ['./calendar.component.scss'],
-  providers: [
-    { provide: LOCALE_ID, useValue: 'es' } // Locale español
-  ]
+  templateUrl: 'calendar.component.html',
+  styleUrl: 'calendar.component.scss',
+  providers: [provideNativeDateAdapter()],
+  imports: [MatDatepickerModule, MatCardModule],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export default class CalendarComponent {
+export class CalendarComponent {
+  selectedDate = model();
+
   diasCargados = [
     new Date(2024, 11, 25), // Navidad
     new Date(2024, 11, 1), // Año Nuevo
     new Date(2024, 11, 6), // Año Nuevo
     new Date(2024, 11, 4), // Año Nuevo
   ];
-
-  highlightDates = (date: Date): string | null => {
-    const today = new Date();
-    const startOfWeek = this.getStartOfWeek(today);
-    const endOfWeek = this.getEndOfWeek(today);
-
-    // Destacar días específicos
-    if (this.diasCargados.some((d) => this.isSameDate(d, date))) {
-      return 'hihglighted-date';
+  
+  // Insertar clase a los Dias
+  dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view)=>{
+    if (view == 'month'){
+      return this.diasCargados.some((d) => this.isSameDate(d, cellDate)) ? 'diaCargado' : 'diaNoCargado';
     }
 
-    // Destacar días de la semana actual
-    if (date >= startOfWeek && date <= endOfWeek) {
-      return 'current-week';
-    }
-    
-    return null;
-  };
-
-  getStartOfWeek(date: Date): Date {
-    const day = date.getDay();
-    const diff = date.getDate() - day + (day === 0 ? -6 : 1); // Semana empieza lunes
-    return new Date(date.setDate(diff));
-  }
-
-  getEndOfWeek(date: Date): Date {
-    const startOfWeek = this.getStartOfWeek(date);
-    return new Date(startOfWeek.setDate(startOfWeek.getDate() + 6)); // Termina domingo
+    return '';
   }
 
   isSameDate(d1: Date, d2: Date): boolean {
     return d1.getDate() === d2.getDate() && d1.getMonth() === d2.getMonth() && d1.getFullYear() === d2.getFullYear();
   }
-
-  fechaSeleccionada: Date | null = null;
 }
