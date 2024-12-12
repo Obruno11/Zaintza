@@ -29,4 +29,8 @@ export class ApiService {
     let url = 'https://angular.lhusurbil.eus/SetOneZaintza';
     return this.http.put<any>(url, body);
   }
+
+  getAllProfesores(){
+    
+  }
 }

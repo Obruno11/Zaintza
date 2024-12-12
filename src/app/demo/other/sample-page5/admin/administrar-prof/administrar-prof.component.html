@@ -1,0 +1,42 @@
+<div class="tw-flex tw-justify-between tw-w-full tw-mb-10">
+  <div>
+    <label for="nombre">Nombre: </label>
+    <input type="text" name="nombre">
+    <label for="nombre">Apellidos: </label>
+    <input type="text" name="apellidos">
+  </div>
+  <button>Add</button>
+</div>
+
+<div class="example-container">
+
+  <h2>Enabled</h2>
+
+  <div
+    cdkDropList
+    #todoList="cdkDropList"
+    [cdkDropListData]="enabled"
+    [cdkDropListConnectedTo]="[doneList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    @for (item of enabled; track item;) {
+      <div class="example-box" id="{{item.id}}" cdkDrag>{{item.nombre}}</div>
+    }
+  </div>
+</div>
+
+<div class="example-container">
+  <h2>Disabled</h2>
+
+  <div
+    cdkDropList
+    #doneList="cdkDropList"
+    [cdkDropListData]="disabled"
+    [cdkDropListConnectedTo]="[todoList]"
+    class="example-list"
+    (cdkDropListDropped)="drop($event)">
+    @for (item of disabled; track item) {
+      <div class="example-box" id="{{item.id}}" cdkDrag>{{item.nombre}}</div>
+    }
+  </div>
+</div>
